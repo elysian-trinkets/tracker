@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Task Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f9;
+      padding: 1em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 2em;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.75em;
+      vertical-align: top;
+    }
+    thead th {
+      background: #3c8dbc;
+      color: #fff;
+      text-align: center;
+    }
+    .fixed {
+      font-size: 0.9em;
+      font-weight: bold;
+      color: #333;
+    }
+    .task-input {
+      width: 100%;
+      padding: 0.5em;
+      margin-bottom: 0.5em;
+      box-sizing: border-box;
+      font-size: 1em;
+    }
+    .checkbox-label {
+      display: block;
+      margin-top: 0.3em;
+    }
+    .dailyPct {
+      font-weight: bold;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+<h1>Daily Task & Habit Tracker</h1>
+<table id="tracker">
+  <thead>
+    <tr>
+      <th>Task</th><th>Jul 04, 2025 (Fri)</th><th>Jul 05, 2025 (Sat)</th><th>Jul 06, 2025 (Sun)</th><th>Jul 07, 2025 (Mon)</th><th>Jul 08, 2025 (Tue)</th><th>Jul 09, 2025 (Wed)</th><th>Jul 10, 2025 (Thu)</th><th>Daily %</th></tr></thead><tbody><tr><td class='fixed'>Wake up at 5, brisk walk; bath & get to study</td>
+        <td>
+          <input class="task-input" id="2025-07-04#0" placeholder="Wake up at 5, brisk walk; bath & get to study">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-04#0c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-05#0" placeholder="Wake up at 5, brisk walk; bath & get to study">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-05#0c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-06#0" placeholder="Wake up at 5, brisk walk; bath & get to study">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-06#0c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-07#0" placeholder="Wake up at 5, brisk walk; bath & get to study">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-07#0c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-08#0" placeholder="Wake up at 5, brisk walk; bath & get to study">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-08#0c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-09#0" placeholder="Wake up at 5, brisk walk; bath & get to study">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-09#0c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-10#0" placeholder="Wake up at 5, brisk walk; bath & get to study">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-10#0c"> ✓
+          </label>
+        </td><td class='dailyPct' id='pct-0'>0%</td></tr><tr><td class='fixed'>Task 1</td>
+        <td>
+          <input class="task-input" id="2025-07-04#1" placeholder="Task 1">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-04#1c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-05#1" placeholder="Task 1">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-05#1c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-06#1" placeholder="Task 1">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-06#1c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-07#1" placeholder="Task 1">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-07#1c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-08#1" placeholder="Task 1">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-08#1c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-09#1" placeholder="Task 1">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-09#1c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-10#1" placeholder="Task 1">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-10#1c"> ✓
+          </label>
+        </td><td class='dailyPct' id='pct-1'>0%</td></tr><tr><td class='fixed'>Task 2</td>
+        <td>
+          <input class="task-input" id="2025-07-04#2" placeholder="Task 2">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-04#2c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-05#2" placeholder="Task 2">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-05#2c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-06#2" placeholder="Task 2">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-06#2c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-07#2" placeholder="Task 2">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-07#2c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-08#2" placeholder="Task 2">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-08#2c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-09#2" placeholder="Task 2">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-09#2c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-10#2" placeholder="Task 2">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-10#2c"> ✓
+          </label>
+        </td><td class='dailyPct' id='pct-2'>0%</td></tr><tr><td class='fixed'>Task 3</td>
+        <td>
+          <input class="task-input" id="2025-07-04#3" placeholder="Task 3">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-04#3c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-05#3" placeholder="Task 3">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-05#3c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-06#3" placeholder="Task 3">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-06#3c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-07#3" placeholder="Task 3">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-07#3c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-08#3" placeholder="Task 3">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-08#3c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-09#3" placeholder="Task 3">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-09#3c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-10#3" placeholder="Task 3">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-10#3c"> ✓
+          </label>
+        </td><td class='dailyPct' id='pct-3'>0%</td></tr><tr><td class='fixed'>Task 4</td>
+        <td>
+          <input class="task-input" id="2025-07-04#4" placeholder="Task 4">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-04#4c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-05#4" placeholder="Task 4">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-05#4c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-06#4" placeholder="Task 4">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-06#4c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-07#4" placeholder="Task 4">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-07#4c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-08#4" placeholder="Task 4">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-08#4c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-09#4" placeholder="Task 4">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-09#4c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-10#4" placeholder="Task 4">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-10#4c"> ✓
+          </label>
+        </td><td class='dailyPct' id='pct-4'>0%</td></tr><tr><td class='fixed'>Task 5</td>
+        <td>
+          <input class="task-input" id="2025-07-04#5" placeholder="Task 5">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-04#5c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-05#5" placeholder="Task 5">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-05#5c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-06#5" placeholder="Task 5">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-06#5c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-07#5" placeholder="Task 5">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-07#5c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-08#5" placeholder="Task 5">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-08#5c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-09#5" placeholder="Task 5">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-09#5c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-10#5" placeholder="Task 5">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-10#5c"> ✓
+          </label>
+        </td><td class='dailyPct' id='pct-5'>0%</td></tr><tr><td class='fixed'>Task 6</td>
+        <td>
+          <input class="task-input" id="2025-07-04#6" placeholder="Task 6">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-04#6c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-05#6" placeholder="Task 6">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-05#6c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-06#6" placeholder="Task 6">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-06#6c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-07#6" placeholder="Task 6">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-07#6c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-08#6" placeholder="Task 6">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-08#6c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-09#6" placeholder="Task 6">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-09#6c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-10#6" placeholder="Task 6">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-10#6c"> ✓
+          </label>
+        </td><td class='dailyPct' id='pct-6'>0%</td></tr><tr><td class='fixed'>Task 7</td>
+        <td>
+          <input class="task-input" id="2025-07-04#7" placeholder="Task 7">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-04#7c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-05#7" placeholder="Task 7">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-05#7c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-06#7" placeholder="Task 7">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-06#7c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-07#7" placeholder="Task 7">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-07#7c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-08#7" placeholder="Task 7">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-08#7c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-09#7" placeholder="Task 7">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-09#7c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-10#7" placeholder="Task 7">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-10#7c"> ✓
+          </label>
+        </td><td class='dailyPct' id='pct-7'>0%</td></tr><tr><td class='fixed'>Task 8</td>
+        <td>
+          <input class="task-input" id="2025-07-04#8" placeholder="Task 8">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-04#8c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-05#8" placeholder="Task 8">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-05#8c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-06#8" placeholder="Task 8">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-06#8c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-07#8" placeholder="Task 8">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-07#8c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-08#8" placeholder="Task 8">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-08#8c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-09#8" placeholder="Task 8">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-09#8c"> ✓
+          </label>
+        </td>
+        <td>
+          <input class="task-input" id="2025-07-10#8" placeholder="Task 8">
+          <label class="checkbox-label">
+            <input type="checkbox" id="2025-07-10#8c"> ✓
+          </label>
+        </td><td class='dailyPct' id='pct-8'>0%</td></tr>
+  </tbody>
+</table>
+<script>
+(function() {
+  const startDate = new Date(2025, 6, 4);
+  const days = 7;
+  const tasks = 9;
+
+  for (let t = 0; t < tasks; t++) {
+    let completed = 0;
+    for (let d = 0; d < days; d++) {
+      const date = new Date(startDate.getTime() + d * 86400000);
+      const key = date.toISOString().slice(0, 10) + "#" + t;
+      const input = document.getElementById(key);
+      const checkbox = document.getElementById(key + "c");
+
+      const storedVal = localStorage.getItem(key) || "";
+      const checked = localStorage.getItem(key + "c") === "1";
+
+      input.value = storedVal;
+      checkbox.checked = checked;
+
+      input.addEventListener("input", () => {
+        localStorage.setItem(key, input.value);
+      });
+
+      checkbox.addEventListener("change", () => {
+        localStorage.setItem(key + "c", checkbox.checked ? "1" : "0");
+        location.reload();
+      });
+
+      if (checked) completed++;
+    }
+    const pct = Math.round((completed / days) * 100);
+    const pctCell = document.getElementById("pct-" + t);
+    if (pctCell) pctCell.textContent = pct + "%";
+  }
+})();
+</script>
+</body>
+</html>
