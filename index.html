@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weekly Task Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f9;
+      padding: 1em;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 2em;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 0.5em;
+      vertical-align: top;
+    }
+    thead th {
+      background: #3c8dbc;
+      color: #fff;
+    }
+    tfoot td {
+      background: #d3eafc;
+      font-weight: bold;
+    }
+    .fixed {
+      font-size: 0.85em;
+      color: #333;
+      margin-bottom: 0.5em;
+    }
+    .task {
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 0.3em;
+    }
+    .dailyPct, .weeklyPct {
+      min-width: 3em;
+      text-align: right;
+    }
+    .week-row td:last-child {
+      background: #d0f0c0;
+    }
+    .month-footer td {
+      background: #fcf8e3;
+    }
+  </style>
+</head>
+<body>
+<h1>Weekly Task & Habit Tracker</h1>
+<table id="cal">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Mon</th>
+      <th>Tue</th>
+      <th>Wed</th>
+      <th>Thu</th>
+      <th>Fri</th>
+      <th>Sat</th>
+      <th>Sun</th>
+      <th>Week %</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+  <tfoot id="months"></tfoot>
+</table>
+<script>
+(function() {
+  const start = new Date(2025, 6, 4); // July 4, 2025
+  const end = new Date(2026, 4, 15);  // May 15, 2026
+  const MS = 86400000;
+  const FIX = "Wake up at 5, brisk walk; bath & get to study";
+  let cur = new Date(start);
+  while (cur.getDay() !== 1) cur = new Date(cur - MS);
+  const tb = document.querySelector('#cal tbody');
+  while (cur <= end) {
+    let tr = document.createElement('tr');
+    tr.className = 'week-row';
+    let wkDone = 0;
+    for (let d = 1; d <= 7; d++) {
+      let td = document.createElement('td');
+      let dt = new Date(cur);
+      if (dt < start || dt > end) {
+        td.innerHTML = '—';
+      } else {
+        let key = dt.toISOString().slice(0, 10);
+        td.innerHTML = '<div class="fixed">' + FIX + '</div>';
+        for (let i = 0; i < 8; i++) {
+          let id = key + '#' + i;
+          let val = localStorage.getItem(id) || '';
+          let chk = localStorage.getItem(id + 'c') === '1';
+          td.innerHTML += `<input id="${id}" class="task" value="${val}" placeholder="Task ${i+1}"/>
+            <label><input type="checkbox" id="${id}c" ${chk ? 'checked' : ''}/>✓</label><br>`;
+          if (chk) wkDone++;
+        }
+        let pc = Math.round((td.querySelectorAll('input[type=checkbox]:checked').length / 8) * 100);
+        td.innerHTML += `<div class="dailyPct">${pc}%</div>`;
+      }
+      tr.appendChild(td);
+      cur = new Date(cur.getTime() + MS);
+    }
+    let wpc = Math.round(wkDone / 56 * 100);
+    let endTd = document.createElement('td');
+    endTd.className = 'weeklyPct';
+    endTd.textContent = wpc + '%';
+    tr.appendChild(endTd);
+    tb.appendChild(tr);
+  }
+
+  document.querySelectorAll('.task, input[type=checkbox]').forEach(el => {
+    el.addEventListener('change', e => {
+      let id = e.target.id;
+      if (id.endsWith('c')) {
+        localStorage.setItem(id, e.target.checked ? '1' : '0');
+      } else {
+        localStorage.setItem(id, e.target.value);
+      }
+      location.reload();
+    });
+  });
+})();
+</script>
+</body>
+</html>
